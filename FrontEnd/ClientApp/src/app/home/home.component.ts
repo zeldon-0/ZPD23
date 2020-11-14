@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-const MINUTES_UNITL_AUTO_LOGOUT = 0.3 // in mins
-const CHECK_INTERVAL = 10000 
+const MINUTES_UNITL_AUTO_LOGOUT = 2.5
+const CHECK_INTERVAL = 1000 
 
 @Component({
   selector: 'app-home',
@@ -17,7 +17,7 @@ export class HomeComponent {
     this.initInterval();
 
   }
-
+  public remainder : number;
   initInterval() {
     setInterval(() => {
       this.check();
@@ -27,7 +27,9 @@ export class HomeComponent {
   check() {
     const now = Date.now();
     const timeleft = this.loginTime + MINUTES_UNITL_AUTO_LOGOUT * 60 * 1000;
+
     const diff = timeleft - now;
+    this.remainder = diff;
     const isTimeout = diff < 0;
 
     if (isTimeout) {

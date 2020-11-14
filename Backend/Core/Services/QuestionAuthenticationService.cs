@@ -81,10 +81,10 @@ namespace Core.Services
             Random random = new Random();
             for (int i = 0; i < 3; i++)
             {
-                int value = random.Next(0, 9);
+                int value = random.Next(0, 8);
                 while(questionNumbers.Any(num => num == value))
                 {
-                    value = random.Next(0, 9); 
+                    value = random.Next(0, 8); 
                 }
                 questionNumbers.Add(value);
             }
