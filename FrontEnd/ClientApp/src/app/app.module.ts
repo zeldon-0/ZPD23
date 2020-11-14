@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PasswordLoginComponent } from './components/password-login/password-login.component';
+import { QuestionLoginComponent } from './components/question-login/question-login.component';
 import { AuthGuard } from './guards/auth.guard';
 
 
@@ -14,7 +15,8 @@ import { AuthGuard } from './guards/auth.guard';
   declarations: [
     AppComponent,
     HomeComponent,
-    PasswordLoginComponent
+    PasswordLoginComponent,
+    QuestionLoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -24,6 +26,7 @@ import { AuthGuard } from './guards/auth.guard';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full',  canActivate: [AuthGuard]},
       { path: 'passwordLogin', component: PasswordLoginComponent  },
+      { path: 'questionLogin', component: QuestionLoginComponent  },
     ])
   ],
   providers: [],

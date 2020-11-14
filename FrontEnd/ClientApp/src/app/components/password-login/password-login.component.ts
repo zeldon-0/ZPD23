@@ -11,7 +11,7 @@ import { PasswordAuth } from '../../models';
 })
 export class PasswordLoginComponent implements OnInit {
   loginForm: FormGroup;
-  authModel : PasswordAuth
+  authModel : PasswordAuth;
 
   constructor(
     private formBuilder: FormBuilder,

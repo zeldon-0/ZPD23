@@ -1,6 +1,6 @@
 ﻿<body>
     <h2 style="text-align: center;">Login</h2>
-    <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <form  [formGroup]="userNameForm" (ngSubmit)="onSubmit()">
         <div class = "container">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card-body">
@@ -13,15 +13,35 @@
                         <a routerLink="/passwordLogin" class="btn btn-link">Login with password</a>
                     </div>
                 </div>
-                <div *ngIf="questions">
-                    <div *ngFor="let question of questions">
-                        <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" formControlName="username" class="form-control" />
+
+            </div>
+        </div>
+    </form>
+    <form ngNoForm  *ngIf = "questionsArray">
+        <div class = "container">
+            <div class="col-sm-9 col-md-10 col-lg-5 mx-auto">
+                <div class="card-body">
+                    <div class="form-group">
+                        <div *ngFor="let question of questionsArray; let i = index">
+                            <p>{{question.value}}</p>
+                            <input type="text"
+                            class="col-sm-8"
+                            [(ngModel)]="questionsArray[i].answer">
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </form>
+    <div class = "container" *ngIf = "questionsArray">
+        <div class="col-sm-9 col-md-10 col-lg-5 mx-auto">
+            <div class="card-body">
+                <div class="form-group">
+                    <button class="btn btn-primary" (click)="onQuestionsSubmit()">Login</button>
+    
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
