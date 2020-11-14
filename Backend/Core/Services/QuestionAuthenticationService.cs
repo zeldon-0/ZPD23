@@ -89,6 +89,13 @@ namespace Core.Services
                 questionNumbers.Add(value);
             }
 
+            userQuestions = userQuestions
+                .Where(uq => questionNumbers
+                    .Any(num =>
+                        num == uq.QuestionId
+                    )
+                );
+
             return userQuestions.Select(uq => 
                 new QuestionModel
                 {
