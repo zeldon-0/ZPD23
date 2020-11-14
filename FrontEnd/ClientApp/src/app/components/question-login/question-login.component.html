@@ -1,0 +1,27 @@
+﻿<body>
+    <h2 style="text-align: center;">Login</h2>
+    <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class = "container">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" formControlName="username" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">Get questions</button>
+                        <a routerLink="/passwordLogin" class="btn btn-link">Login with password</a>
+                    </div>
+                </div>
+                <div *ngIf="questions">
+                    <div *ngFor="let question of questions">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" formControlName="username" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>

@@ -26,6 +26,16 @@ namespace ZPD23
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowMyOrigin",
+                        builder =>
+                        {
+                            builder.AllowAnyOrigin();
+                            builder.AllowAnyHeader();
+                            builder.AllowAnyMethod();
+                        });
+            });
             services.AddControllers();
             services.AddData(Configuration);
             services.AddCore();
@@ -43,6 +53,8 @@ namespace ZPD23
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("AllowMyOrigin");
 
             app.UseEndpoints(endpoints =>
             {
