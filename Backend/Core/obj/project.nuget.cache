@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "FemhaMCuYdQp3x1aatoZikQSWMxY8xNEneql8fCSMtae+3F3CJmBxmuukD9YQ+DDb1+iO6+bLTM8KykHajha3w==",
+  "success": true,
+  "projectFilePath": "E:\\ZPD\\ZPD23\\Backend\\Core\\Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Vadym\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
